@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Canvas sandbox</title>
+	<style>
+		body, html {
+			margin: 0;
+		}
+		canvas {
+			display: block;
+		}
+	</style>
+	<script>
+		function appLoad() {
+			var script = document.createElement("script"),
+				query = document.location.search.match(/ex=(.*?)(?:$|\s|&|#)/) || [],
+				src = query.pop();
+			if (src) {
+				script.src = "js/"+src+".js";
+				document.body.appendChild(script);
+			}
+		}
+		window.onload = appLoad;
+	</script>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+</body>
+</html>
